@@ -1,0 +1,22 @@
+<h2>You played <%= @player_move %></h2>
+<h2>They played <%= @computer_move %></h2>
+
+<% if @player_move == @computer_move %>
+  <h3>We tied</h3>
+<% elsif (
+  @player_move == "rock" && @computer_move == "scissors" ||
+  @player_move == "paper" && @computer_move == "rock" ||
+  @player_move == "scissors" && @computer_move == "paper"
+) %>
+  <h3>We won</h3>
+<% else %>
+  <h3>We lost</h3>
+<% end %>
+
+<p><a href="/">Rules</a></p>
+
+<ul>
+  <li><a href="/rock">Play Rock</a></li>
+  <li><a href="/paper">Play Paper</a></li>
+  <li><a href="/scissors">Play Scissors</a></li>
+</ul>
